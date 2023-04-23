@@ -979,10 +979,6 @@ def print_maps(all_maps):
 
 if __name__ == '__main__':
     parse_args()
-    args.trained_model = "weights/yolact_base_54_800000.pth"
-    args.score_threshold=0.15
-    args.top_k=15
-    args.image="test_img.jpg:output_image.jpg"
     if args.config is not None:
         set_cfg(args.config)
 
