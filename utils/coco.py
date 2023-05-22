@@ -4,10 +4,6 @@ import sys
 import torch
 import torch.utils.data as data
 import torchvision.transforms as transforms
-# changed by xzt:
-#import sys
-#sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages') # in order to import cv2 under python3
-#import cv2
 import cv2
 import numpy as np
 from .config import cfg
@@ -43,11 +39,11 @@ class COCOAnnotationTransform(object):
                 label_idx = self.label_map[obj['category_id']] - 1
                 final_box = list(np.array([bbox[0], bbox[1], bbox[0]+bbox[2], bbox[1]+bbox[3]])/scale)
                 final_box.append(label_idx)
-                res += [final_box]  # [xmin, ymin, xmax, ymax, label_idx]
+                res += [final_box]
             else:
                 print("No bbox found for object ", obj)
 
-        return res  # [[xmin, ymin, xmax, ymax, label_idx], ... ]
+        return res
 
 
 class COCODetection(data.Dataset):

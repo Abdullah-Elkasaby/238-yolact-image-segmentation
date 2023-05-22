@@ -1,4 +1,4 @@
-from model_config.backbone import ResNetBackbone, VGGBackbone, ResNetBackboneGN, DarkNetBackbone
+from utils.backbone import ResNetBackbone, VGGBackbone, ResNetBackboneGN, DarkNetBackbone
 from math import sqrt
 import torch
 
